@@ -4,7 +4,7 @@ inspired on Mac OS X Mohave.
 
 ## Getting Started
 
-To start using this simple script it's pretty easy. Just follow me!
+Start using this simple script it's pretty easy. Just follow me!
 
 ### Prerequisites
 
