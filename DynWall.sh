@@ -17,7 +17,7 @@
 #      REVISION:  ---
 #===============================================================================
 
-set -o nounset                              # Treat unset variables as an error
+#set -o nounset                              # Treat unset variables as an error
 args=("$@")
 HOUR=0
 MIN=0
@@ -47,9 +47,13 @@ grab_time(){
 	fi
 }
 
-while :
-do
-	grab_time
-	change_wallpaper
-	sleep 1.5h
-done
+if [ ${args[0]} == "start" ]
+then
+	while :
+	do
+		echo "Hllo"
+		grab_time
+		change_wallpaper
+		sleep ${args[1]}m
+	done
+fi
