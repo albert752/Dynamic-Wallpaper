@@ -48,3 +48,20 @@ DynWall start <m>
 Where `m` is the interval of minutes between checks.
 
 
+## Authors
+
+* **Albert Azemar i Rovira** - *Initial work* -
+	[albert752](https://github.com/albert752)
+
+* **Pol Perez** - *Initial work* -
+	[mefiso](https://github.com/mefiso)
+
+
+## License
+
+This project is licensed under the MIT License - see the
+[LICENSE](LICENSE) file for details
+
+## Acknowledgments
+* To our friend [Jaume Planas](https://github.com/jplanas98) to share his Mac
+	with us.
