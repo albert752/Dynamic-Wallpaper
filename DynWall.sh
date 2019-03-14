@@ -47,6 +47,10 @@ grab_time(){
 	fi
 }
 
+set-up(){
+	wget	
+}
+
 if [ ${args[0]} == "start" ]
 then
 	while :
