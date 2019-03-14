@@ -51,7 +51,6 @@ if [ ${args[0]} == "start" ]
 then
 	while :
 	do
-		echo "Hllo"
 		grab_time
 		change_wallpaper
 		sleep ${args[1]}m
