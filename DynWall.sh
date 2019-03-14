@@ -23,11 +23,14 @@ HOUR=0
 MIN=0
 
 change_wallpaper(){
-	#if [ $MIN -ge 30 ]
-	#then 
-		#HOUR=$(echo "$HOUR + 0.5" | bc)
-	#fi
-
+	if [ $HOUR -lt 3 ]
+	then 
+		HOUR=$(echo "$HOUR+24" | bc)
+	fi
+	if [ $MIN -ge 30 ]
+	then 
+		HOUR=$(echo "$HOUR+0.5" | bc)
+	fi
 	ID=$(echo "($HOUR-1.5)/1.5" | bc)
 	nitrogen --set-zoom-fill ~/Imatges/DynWall/mojave_dynamic_$ID.jpeg
 }
@@ -48,7 +51,5 @@ while :
 do
 	grab_time
 	change_wallpaper
-	sleep 3s 
+	sleep 1.5h
 done
-
-
