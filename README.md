@@ -1,5 +1,5 @@
 # Dynamic-Wallpaper
-A simple script tha dynamicaly changes the wallaper according to the time
+A simple script that dynamicaly changes the wallaper according to the time
 inspired on Mac OS X Mohave.
 
 ## Getting Started
