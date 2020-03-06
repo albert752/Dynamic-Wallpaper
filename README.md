@@ -4,8 +4,6 @@ inspired on Mac OS X Mohave.
 
 ## Getting Started
 
-Start using this simple script it's pretty easy. Just follow me!
-
 ### Prerequisites
 
 You'll just need to install two dependencies:

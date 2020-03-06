@@ -22,7 +22,7 @@ args=("$@")
 HOUR=0
 MIN=0
 
-change_wallpaper(){
+change_wallpaper_mohave(){
 	if [ $HOUR -lt 3 ]
 	then 
 		HOUR=$(echo "$HOUR+24" | bc)
@@ -35,16 +35,40 @@ change_wallpaper(){
 	nitrogen --set-zoom-fill ~/Imatges/DynWall/mojave_dynamic_$ID.jpeg
 }
 
-grab_time(){
-	if [ ${args[0]} == "debug" ]
+change_wallpaper_catalina(){
+	echo "The hour is $HOUR"
+	if [ $HOUR -lt 3 ]	
+	then 
+		ID=0000
+	elif [ $HOUR -lt 6 ]
 	then
-		echo "Debugging mode"
-		HOUR=${args[1]}
-		MIN=${args[2]}
-	else
-		HOUR="$(date +"%H")"
-		MIN="$(date +"%M")"
+		ID=0300
+	elif [ $HOUR -lt 9 ]
+	then
+		ID=0600
+	elif [ $HOUR -lt 12 ]
+	then
+		ID=0900
+	elif [ $HOUR -lt 15 ]
+	then
+		ID=1200
+	elif [ $HOUR -lt 18 ]
+	then 
+		ID=1500
+	elif [ $HOUR -lt 21 ]
+	then
+		ID=1800
+	elif [ $HOUR -lt 24 ]
+	then
+		ID=2100
 	fi
+	nitrogen --set-zoom-fill ~/Pictures/DynWall/catalina_dynamic-$ID.jpg
+	echo "The ID is $ID"
+}
+
+grab_time(){
+	HOUR="$(date +"%H")"
+	MIN="$(date +"%M")"
 }
 
 if [ ${args[0]} == "start" ]
@@ -52,7 +76,14 @@ then
 	while :
 	do
 		grab_time
-		change_wallpaper
+		echo "Weare $HOUR"
+		if [ ${args[2]} == "mohave" ]
+		then
+			change_wallpaper_mohave
+		elif [ ${args[2]} == "catalina" ]
+		then
+			change_wallpaper_catalina
+		fi
 		sleep ${args[1]}m
 	done
 fi
